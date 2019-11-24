@@ -3,8 +3,11 @@ import requests
 import config.config as cfg
 from vk_api.longpoll import VkLongPoll, VkEventType
 from photo_api import PhotoAPI
-class BotVK:
+import threading
+
+class BotVK(threading.Thread):
     def __init__(self,vk, longpoll):
+        threading.Thread.__init__(self)
         self.vk = vk
         self.longpoll = longpoll
 

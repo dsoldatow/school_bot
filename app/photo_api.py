@@ -1,5 +1,5 @@
-import config as cfg
-import requests
+from config import config as cfg
+from main import vk
 
 class PhotoAPI:
     """
@@ -27,6 +27,7 @@ class PhotoAPI:
         json = {
             'album_id': kwargs.get('album_id'),
             'group_id': kwargs.get('group_id'),
-            'v': cfg.VK_API_VERSION
+            'v': cfg.VK_API_VERSION,
+            'access_token': cfg.VK_AUTH_TOKER
         }
-
+        vk.photo
